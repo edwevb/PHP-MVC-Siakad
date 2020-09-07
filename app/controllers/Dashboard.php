@@ -19,4 +19,12 @@ class Dashboard extends Controller
 		$this->view('home/dashboard/mahasiswa/detail',$data);
 		$this->view('layouts/footer');
 	}
+
+	public function tambahMahasiswa()
+	{
+		$this->model('MahasiswaModel')->addMahasiswa($_POST);
+		$this->view('layouts/header');
+		$this->view('home/dashboard/mahasiswa');
+		$this->view('layouts/footer');
+	}
 }
